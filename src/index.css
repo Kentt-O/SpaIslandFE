@@ -1,0 +1,125 @@
+/* Leaflet CSS */
+@import 'leaflet/dist/leaflet.css';
+
+@import "tailwindcss";
+
+
+
+@theme {
+  --color-primary: #edb91d;
+  --color-background-light: #f8f8f6;
+  --color-background-dark: #221d10;
+
+  /* Membership Page Colors */
+  --color-brand-cyan: #19e5e6;
+  --color-brand-cyan-dark: #13b3b3;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F3E5AB;
+
+  --font-display: "Newsreader", serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background-light dark:bg-background-dark text-[#181611] font-body overflow-x-hidden selection:bg-primary selection:text-white;
+  }
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(237, 185, 29, 0.8);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: #edb91d;
+  border-color: #edb91d;
+  color: #181611;
+  box-shadow: 0 0 35px rgba(237, 185, 29, 0.6);
+}
+
+@media print {
+  @page {
+    margin: 20mm;
+  }
+
+  header,
+  footer,
+  aside,
+  button {
+    display: none !important;
+  }
+
+  /* Ensure the content we want to print is visible and full width */
+  main,
+  .layout-container,
+  .prose {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Leaflet Map Custom Styling */
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 16px;
+  font-family: inherit;
+}
+
+.distance-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  min-width: 200px;
+}
